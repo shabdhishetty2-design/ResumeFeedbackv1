@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Resume Feedback</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <button onclick="downloadPDF()">Download Feedback as PDF</button>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📄 AI Resume Feedback System</h1>
+    <input type="file" id="resumeFile" accept=".pdf" />
+    <button onclick="uploadResume()">Upload & Analyze</button>
+    <div id="feedbackSection">
+      <h2>Feedback:</h2>
+      <pre id="feedback"></pre>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <h2>Upload Resume and Job Description</h2>
+<input type="file" id="resumeFile" accept=".pdf,.txt" />
+<br><br>
+<input type="file" id="jobFile" accept=".pdf,.txt" />
+<br><br>
+<button onclick="compareResumeToJob()">Compare to Job Description</button>
+<br><br>
+<div id="feedbackSection">
+  <h2>Feedback:</h2>
+  <pre id="feedback"></pre>
+</div>
+<div id="feedbackSection">
+  <h2>🧠 AI Feedback:</h2>
+  <p><strong>Match Score:</strong> <span id="matchScore">-</span>%</p>
+
+  <div class="progress-bar">
+    <div id="progressFill" class="progress-fill"></div>
+  </div>
+
+  <p><strong>Missing Keywords:</strong> <span id="missingKeywords">-</span></p>
+  <pre id="feedback"></pre>
+</div>
+<h2>📊 Missing Skills Chart</h2>
+<canvas id="missingChart" width="400" height="200"></canvas>
+</body>
+</html>
